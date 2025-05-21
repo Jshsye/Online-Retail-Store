@@ -14,7 +14,6 @@ file['Revenue']= file['Quantity'] * file['UnitPrice']
 
 monthly_revenue = file.groupby('Month')['Revenue'].sum()
 
-# Convert PeriodIndex to datetime for plotting
 monthly_revenue.index = monthly_revenue.index.to_timestamp()
 
 plt.plot( monthly_revenue.index, monthly_revenue.values, marker='o', color= 'Blue')
